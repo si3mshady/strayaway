@@ -1,9 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
+.App {
+  text-align: center;
 }
-
 .thumbnail-gen {
-  width: 24%;
-  height: 24%;
+    width: 20%;
+    height: 20%;
 }
