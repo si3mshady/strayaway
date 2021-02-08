@@ -63,9 +63,7 @@ function App() {
       {mounted? <div> 
            <p>{gps.latitude}</p> 
            <p>{gps.longitude}</p> 
-           <p>{gps.accuracy}</p> 
-            
-          
+           <p>{gps.accuracy}</p>   
            
             
              </div>: null }

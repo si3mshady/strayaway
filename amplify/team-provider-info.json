@@ -1,0 +1,20 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-strayaway-dev-142818-authRole",
+      "UnauthRoleArn": "arn:aws:iam::705166095368:role/amplify-strayaway-dev-142818-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::705166095368:role/amplify-strayaway-dev-142818-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-strayaway-dev-142818-deployment",
+      "UnauthRoleName": "amplify-strayaway-dev-142818-unauthRole",
+      "StackName": "amplify-strayaway-dev-142818",
+      "StackId": "arn:aws:cloudformation:us-east-1:705166095368:stack/amplify-strayaway-dev-142818/2f3a70f0-6a4c-11eb-b295-0a6e9e609c1f",
+      "AmplifyAppId": "d37l6h5fq7phvw"
+    },
+    "categories": {
+      "auth": {
+        "strayawayf9da3fed": {}
+      }
+    }
+  }
+}

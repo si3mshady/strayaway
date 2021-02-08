@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "strayawayf9da3fed": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
