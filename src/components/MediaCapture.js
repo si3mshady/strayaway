@@ -1,18 +1,18 @@
 import React from 'react'
-
+import '../App.css'
 export default function MediaCapture() {
 
-    const loadedDOM = () => {
-        document.addEventListener('DOMContentLoaded', (e) => {
+    // const loadedDOM = () => {
+    //     document.addEventListener('DOMContentLoaded', (e) => {
             
-            const camera_input = document.getElementById("camera")
-            console.log('DOM loaded')
-            console.log('Added eventlistener')
+    //         const camera_input = document.getElementById("camera")
+    //         console.log('DOM loaded')
+    //         console.log('Added eventlistener')
         
         
         
-        } )
-    }
+    //     } )
+    // }
 
     const getImage = (event) => {
         const camera_input = document.getElementById("camera")
@@ -21,19 +21,19 @@ export default function MediaCapture() {
             console.log(event.target.files[0].name)
             const image = document.getElementById("img")
             image.src = window.URL.createObjectURL(event.target.files[0])
+            console.log(image.src)
 
             
         } )
     }
     return (
-       <>
-       {/* {loadedDOM()} */}
+       <>     
             <form action="#" id="form" encType="multipart/form-data">
                     
 
-                    <input onClick={getImage} placeholder="Open Camera" type="file" id="camera"
+                    <input  onClick={getImage} placeholder="Open Camera" type="file" id="camera"
                     accept="image/*" capture />
-                    <img src="" id="img" alt="camera phone" />
+                    <img className="thumbnail-gen" src="" id="img" alt="camera phone" />
             </form>
 
            
