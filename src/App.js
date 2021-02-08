@@ -58,6 +58,8 @@ function App() {
   return (
     <div className='App'> Clean Slate    
      <br/>
+
+     <MediaCapture/>
       <button onClick={()=> { setMounted(!mounted) }}>Get GPS Location</button>
       <br/>
       {mounted? <div> 
