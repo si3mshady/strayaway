@@ -47,7 +47,7 @@ function App() {
         
       })
 
-  }, [gpsHistory])
+  }, [gps])
   return (
     <div className='App'> Stray Away   
      <br/>
