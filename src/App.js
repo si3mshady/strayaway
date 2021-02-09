@@ -4,6 +4,8 @@ import Location from "aws-sdk/clients/location";
 import MediaCapture from './components/MediaCapture'
 import awsconfig from './aws-exports';
 
+// just send a list to api gateway lambda for batch update on location services 
+
 Amplify.configure(awsconfig);
 
 const createClient = async () => {
@@ -67,22 +69,9 @@ function App() {
                         <li key={index+1}>{location.latitude}</li>
                         <li key={index+2}>{location.accuracy}</li> 
                                
-                    </>                  
-                  
-                  )
-                  
-                  )
-                  
-                  
-                  
-                  }
-
-
+                    </> ))}
               </ul>
 
-            {/* <p>{gps.latitude}</p> 
-            <p>{gps.longitude}</p> 
-            <p>{gps.accuracy}</p>  */}
         
            
             
