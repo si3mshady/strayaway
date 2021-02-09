@@ -35,7 +35,7 @@ function App() {
       not shown */
   React.useEffect(() => { navigator.geolocation.getCurrentPosition(handleGeoLocation)},[clicked])  // useEffect is triggered ONLY when selected pieces of state are updated 
   React.useEffect(() => {
-    API.post("strayawayapi", "/gps")
+    API.post("strayawayapi", "/tracker")
       .then(response => {
         // console.log(response)
         console.log("updated gpsHistory")
