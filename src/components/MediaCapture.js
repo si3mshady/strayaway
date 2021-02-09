@@ -5,17 +5,17 @@ export default function MediaCapture() {
     const [displayImage, setDisplayImage] = React.useState(false)
 
     const getImage = (event) => {
-        const camera_input = document.getElementById("camera")
-        camera_input.addEventListener("change", (event) => {          
-            
+        $("#camera").on("change", (event) => {
             if (event.target.files[0] !== null) {
                 setDisplayImage(true)
                 const image = document.getElementById("img")
                 image.src = window.URL.createObjectURL(event.target.files[0])
                
             }
-                      
-        } )
+        }
+            
+            )
+      
     }
     return (
        <>     

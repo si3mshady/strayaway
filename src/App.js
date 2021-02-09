@@ -1,7 +1,7 @@
 import React from 'react'
-import  {API} from "aws-amplify"
+// import  {API} from "aws-amplify"
 import Axios from 'axios'
-import Location from "aws-sdk/clients/location";
+// import Location from "aws-sdk/clients/location";
 import MediaCapture from './components/MediaCapture'
 // just send a list to api gateway lambda for batch update on location services 
 
