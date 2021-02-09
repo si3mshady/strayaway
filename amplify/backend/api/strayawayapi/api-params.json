@@ -1,0 +1,35 @@
+{
+    "paths": [
+        {
+            "name": "/gps",
+            "lambdaFunction": "strayawayfunc",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/gps"
+        }
+    ],
+    "resourceName": "strayawayapi",
+    "apiName": "strayawayapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "strayawayfunc"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-strayaway-dev-192740-authRole",
+        "unAuthRoleName": "amplify-strayaway-dev-192740-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "strayawayfunc",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}

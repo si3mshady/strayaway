@@ -1,10 +1,25 @@
 {
-  "auth": {
-    "strayawayf9da3fed": {
-      "service": "Cognito",
+  "function": {
+    "strayawayfunc": {
+      "build": true,
       "providerPlugin": "awscloudformation",
-      "dependsOn": [],
-      "customAuth": false
+      "service": "Lambda"
+    }
+  },
+  "api": {
+    "strayawayapi": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "strayawayfunc",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ]
     }
   }
 }

@@ -19,6 +19,11 @@ export default function MediaCapture() {
     }
     return (
        <>     
+
+            {displayImage && 
+             <div> <img className="thumbnail-gen" src="" id="img" alt="camera phone" /> 
+             </div>  }    
+       
             <div>
             <button onClick={() => ( $('input').click() )}> Open Camera </button>
             <form           
@@ -28,11 +33,7 @@ export default function MediaCapture() {
                     </form>
             </div>
             
-            {displayImage && 
-            <div>
-                    <img className="thumbnail-gen" src="" id="img" alt="camera phone" />
-            </div>            
-            }            
+                    
        </> 
      
     )

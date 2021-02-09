@@ -1,21 +1,8 @@
 import React from 'react'
-import Amplify, { Auth } from 'aws-amplify';
 import Location from "aws-sdk/clients/location";
 import MediaCapture from './components/MediaCapture'
-import awsconfig from './aws-exports';
-
 // just send a list to api gateway lambda for batch update on location services 
 
-Amplify.configure(awsconfig);
-
-const createClient = async () => {
-    const credentials = await Auth.currentCredentials();
-    const client = new Location({
-        credentials,
-        region: awsconfig.aws_project_region,
-   });
-   return client;
-}
 const initialLocationState = {
   latitude: null,
   longitude: null,
@@ -48,16 +35,15 @@ function App() {
       not shown */
   React.useEffect(() => { navigator.geolocation.getCurrentPosition(handleGeoLocation)},[clicked, gpsHistory])  // useEffect is triggered when selected pieces of state are updated 
 
-
   return (
-    <div className='App'> Clean Slate    
+    <div className='App'> Stray Away   
      <br/>
 
      <MediaCapture/>
       <button onClick={()=> { setButtonClicked(!clicked); trackHistory() }}>Get GPS Location</button>
       <br/>
-      {clicked? <div>     
-              <ul style={{listStyle:"none",textAlign:"center"}}>
+      {clicked? <div style={{textAlign:"center"}}>     
+              <ul style={{listStyle:"none"}}>
 
                   {gps.map((location, index) => 
                   
@@ -85,4 +71,5 @@ export default App;
 //https://docs.amazonaws.cn/en_us/general/latest/gr/signing_aws_api_requests.html
 //https://www.codegrepper.com/code-examples/delphi/js+date+now+to+iso+string
 // sigv4 https://docs.aws.amazon.com/AmazonS3/latest/API/sigv4-query-string-auth.html 
+//https://www.youtube.com/watch?v=dbrez37HlJM
 ///var isoDate = new Date().toISOString()
