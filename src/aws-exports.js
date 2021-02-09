@@ -8,6 +8,16 @@ const awsmobile = {
             "name": "apistrayaway",
             "endpoint": "https://guiigklp37.execute-api.us-east-1.amazonaws.com/dev",
             "region": "us-east-1"
+        },
+        {
+            "name": "strayawayamplify",
+            "endpoint": "https://bk2ojpjvl6.execute-api.us-east-1.amazonaws.com/dev",
+            "region": "us-east-1"
+        },
+        {
+            "name": "petproject",
+            "endpoint": "https://72zu52q14g.execute-api.us-east-1.amazonaws.com/dev",
+            "region": "us-east-1"
         }
     ]
 };

@@ -1,5 +1,6 @@
 import React from 'react'
 import  {API} from "aws-amplify"
+import Axios from 'axios'
 import Location from "aws-sdk/clients/location";
 import MediaCapture from './components/MediaCapture'
 // just send a list to api gateway lambda for batch update on location services 
@@ -35,14 +36,15 @@ function App() {
       not shown */
   React.useEffect(() => { navigator.geolocation.getCurrentPosition(handleGeoLocation)},[clicked])  // useEffect is triggered ONLY when selected pieces of state are updated 
   React.useEffect(() => {
-    API.post("strayawayapi", "/tracker")
+    const url = "https://72zu52q14g.execute-api.us-east-1.amazonaws.com/dev/tracker"
+    Axios.post(url, gpsHistory)
       .then(response => {
-        // console.log(response)
+        console.log(response)
         console.log("updated gpsHistory")
       })
       .catch(error => {
-        console.log(error.response)
-        console.log("error")
+        console.log(error)
+        
       })
 
   }, [gpsHistory])

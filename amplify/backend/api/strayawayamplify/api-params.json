@@ -1,0 +1,35 @@
+{
+    "paths": [
+        {
+            "name": "/tracker",
+            "lambdaFunction": "apistrayaway",
+            "privacy": {
+                "open": true
+            },
+            "policyResourceName": "/tracker"
+        }
+    ],
+    "resourceName": "strayawayamplify",
+    "apiName": "strayawayamplify",
+    "functionArns": [
+        {
+            "lambdaFunction": "apistrayaway"
+        }
+    ],
+    "privacy": {
+        "auth": 0,
+        "unauth": 0,
+        "authRoleName": "amplify-strayaway-dev-201841-authRole",
+        "unAuthRoleName": "amplify-strayaway-dev-201841-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "apistrayaway",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ]
+}
