@@ -33,12 +33,12 @@
         "FunctionName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "strayawayfunc",
+            "apistrayaway",
             {
               "Fn::Join": [
                 "",
                 [
-                  "strayawayfunc",
+                  "apistrayaway",
                   "-",
                   {
                     "Ref": "env"
@@ -64,12 +64,12 @@
             "Arn"
           ]
         },
-        "Runtime": "python3.8",
+        "Runtime": "nodejs12.x",
         "Layers": [],
         "Timeout": "25",
         "Code": {
-          "S3Bucket": "amplify-strayaway-dev-192740-deployment",
-          "S3Key": "amplify-builds/strayawayfunc-63777273456939744b68-build.zip"
+          "S3Bucket": "amplify-strayaway-dev-201841-deployment",
+          "S3Key": "amplify-builds/apistrayaway-52495170324167637975-build.zip"
         }
       }
     },
@@ -79,12 +79,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "strayawayLambdaRolec82e34e1",
+            "strayawayLambdaRole0ae99010",
             {
               "Fn::Join": [
                 "",
                 [
-                  "strayawayLambdaRolec82e34e1",
+                  "strayawayLambdaRole0ae99010",
                   "-",
                   {
                     "Ref": "env"

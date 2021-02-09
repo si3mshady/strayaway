@@ -14,15 +14,15 @@
         },
     
     
-          "functionstrayawayfuncName": {
+          "functionapistrayawayName": {
             "Type": "String",
-            "Default": "functionstrayawayfuncName"
+            "Default": "functionapistrayawayName"
           },
         
           
-          "functionstrayawayfuncArn": {
+          "functionapistrayawayArn": {
             "Type": "String",
-            "Default": "functionstrayawayfuncArn"
+            "Default": "functionapistrayawayArn"
           }
         
           
@@ -45,16 +45,16 @@
         
         
         
-      "strayawayapi": {
+      "apistrayaway": {
         "Type": "AWS::ApiGateway::RestApi",
         "Properties": {
           "Description": "",
-          "Name": "strayawayapi",
+          "Name": "apistrayaway",
           "Body": {
             "swagger": "2.0",
             "info": {
               "version": "2018-05-24T17:52:00Z",
-              "title": "strayawayapi"
+              "title": "apistrayaway"
             },
             "host": {
                 "Fn::Join": [
@@ -90,7 +90,7 @@
             ],
             "paths": {
               
-              "/gps": {
+              "/tracker": {
                 "options": {
                   "consumes": [
                     "application/json"
@@ -176,7 +176,7 @@
                             
                             {
                                 
-                                "Ref": "functionstrayawayfuncArn"
+                                "Ref": "functionapistrayawayArn"
                             },
                             
                             "/invocations"
@@ -189,7 +189,7 @@
                   }
                 }
               },
-              "/gps/{proxy+}": {
+              "/tracker/{proxy+}": {
                 "options": {
                   "consumes": [
                     "application/json"
@@ -275,7 +275,7 @@
                           
                           {
                             
-                            "Ref": "functionstrayawayfuncArn"
+                            "Ref": "functionapistrayawayArn"
                           },
                           
                           "/invocations"
@@ -332,12 +332,12 @@
                   
         
         
-        "functionstrayawayfuncPermissionstrayawayapi": {
+        "functionapistrayawayPermissionapistrayaway": {
             "Type": "AWS::Lambda::Permission",
             "Properties": {
                 "FunctionName": 
                     {
-                        "Ref":  "functionstrayawayfuncName"
+                        "Ref":  "functionapistrayawayName"
                     },
                     
                     "Action": "lambda:InvokeFunction",
@@ -356,7 +356,7 @@
                             },
                             ":",
                             {
-                                "Ref": "strayawayapi"
+                                "Ref": "apistrayaway"
                             },
                             "/*/*/*"
                         ]
@@ -367,7 +367,7 @@
         
         
         
-      "DeploymentAPIGWstrayawayapi": {
+      "DeploymentAPIGWapistrayaway": {
         "Type": "AWS::ApiGateway::Deployment",
         "Properties": {
           "Description": "The Development stage deployment of your API.",
@@ -381,7 +381,7 @@
             ]
           },
           "RestApiId": {
-            "Ref": "strayawayapi"
+            "Ref": "apistrayaway"
           }
         }
       }
@@ -389,15 +389,15 @@
     "Outputs": {
         "RootUrl": {
             "Description": "Root URL of the API gateway",
-            "Value": {"Fn::Join": ["", ["https://", {"Ref": "strayawayapi"}, ".execute-api.", {"Ref": "AWS::Region"}, ".amazonaws.com/", {"Fn::If": ["ShouldNotCreateEnvResources","Prod", {"Ref": "env"} ]}]]}
+            "Value": {"Fn::Join": ["", ["https://", {"Ref": "apistrayaway"}, ".execute-api.", {"Ref": "AWS::Region"}, ".amazonaws.com/", {"Fn::If": ["ShouldNotCreateEnvResources","Prod", {"Ref": "env"} ]}]]}
         },
         "ApiName": {
           "Description": "API Friendly name",
-          "Value": "strayawayapi"
+          "Value": "apistrayaway"
         },
         "ApiId": {
           "Description": "API ID (prefix of API URL)",
-          "Value": {"Ref": "strayawayapi"}
+          "Value": {"Ref": "apistrayaway"}
         }
     }
   }

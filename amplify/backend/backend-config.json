@@ -1,19 +1,19 @@
 {
   "function": {
-    "strayawayfunc": {
+    "apistrayaway": {
       "build": true,
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     }
   },
   "api": {
-    "strayawayapi": {
+    "apistrayaway": {
       "service": "API Gateway",
       "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
           "category": "function",
-          "resourceName": "strayawayfunc",
+          "resourceName": "apistrayaway",
           "attributes": [
             "Name",
             "Arn"
