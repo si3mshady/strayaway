@@ -1,4 +1,5 @@
 import React from 'react'
+import  {API} from "aws-amplify"
 import Location from "aws-sdk/clients/location";
 import MediaCapture from './components/MediaCapture'
 // just send a list to api gateway lambda for batch update on location services 
@@ -28,13 +29,23 @@ function App() {
   const trackHistory = () => {
     updateGPSHistory(prev => ([ ...prev,...gps])) //create new array with new & previous elements
     console.log(gpsHistory)
-
   }
 
      /* clean up after useEffect requires return statement for deactivated method that was triggered
       not shown */
-  React.useEffect(() => { navigator.geolocation.getCurrentPosition(handleGeoLocation)},[clicked, gpsHistory])  // useEffect is triggered when selected pieces of state are updated 
+  React.useEffect(() => { navigator.geolocation.getCurrentPosition(handleGeoLocation)},[clicked])  // useEffect is triggered ONLY when selected pieces of state are updated 
+  React.useEffect(() => {
+    API.post("strayawayapi", "/gps")
+      .then(response => {
+        // console.log(response)
+        console.log("updated gpsHistory")
+      })
+      .catch(error => {
+        console.log(error.response)
+        console.log("error")
+      })
 
+  }, [gpsHistory])
   return (
     <div className='App'> Stray Away   
      <br/>
