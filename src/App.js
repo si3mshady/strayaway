@@ -39,16 +39,14 @@ function App() {
     }
 
   const trackHistory = () => {
-    updateGPSHistory(prev => ([ ...prev,...gps])) //create new array with previous elements and new
+    updateGPSHistory(prev => ([ ...prev,...gps])) //create new array with new & previous elements
     console.log(gpsHistory)
 
   }
 
-  React.useEffect(() => {
-    navigator.geolocation.getCurrentPosition(handleGeoLocation)   
-     // clean up after useEffect requires return statement for deactivated method that was triggered
-     // not shown
-},[clicked, gpsHistory])  // useEffect is triggered when selected pieces of state are updated 
+     /* clean up after useEffect requires return statement for deactivated method that was triggered
+      not shown */
+  React.useEffect(() => { navigator.geolocation.getCurrentPosition(handleGeoLocation)},[clicked, gpsHistory])  // useEffect is triggered when selected pieces of state are updated 
 
 
   return (
