@@ -10,6 +10,11 @@
       "StackName": "amplify-strayaway-dev-201841",
       "StackId": "arn:aws:cloudformation:us-east-1:705166095368:stack/amplify-strayaway-dev-201841/22654310-6a7d-11eb-b164-0e71a2c850a7",
       "AmplifyAppId": "d1twjevnb13iil"
+    },
+    "categories": {
+      "auth": {
+        "strayawaya826e3e9": {}
+      }
     }
   }
 }

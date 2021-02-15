@@ -4,7 +4,6 @@ import Axios from 'axios'
 // import Location from "aws-sdk/clients/location";
 import MediaCapture from './components/MediaCapture'
 // just send a list to api gateway lambda for batch update on location services 
-
 const initialLocationState = {
   latitude: null,
   longitude: null,
@@ -49,25 +48,28 @@ function App() {
 
   }, [gps])
   return (
-    <div className='App'> Stray Away   
+    <div className='App mainframe'> Stray Away   
      <br/>
+    <div className='imageFrame'>
 
-     <MediaCapture/>
+            <MediaCapture/>
+    </div>
+  
       <button onClick={()=> { setButtonClicked(!clicked); trackHistory() }}>Get GPS Location</button>
       <br/>
       {clicked? <div style={{textAlign:"center"}}>     
-              <ul style={{listStyle:"none"}}>
+             
 
                   {gps.map((location, index) => 
                   
                   (
                     <>
-                        <li key={index}>{location.longitude}</li>
-                        <li key={index+1}>{location.latitude}</li>
-                        <li key={index+2}>{location.accuracy}</li> 
+                        <p key={index}>{location.longitude}</p>
+                        <p key={index+1}>{location.latitude}</p>
+                        <p key={index+2}>{location.accuracy}</p> 
                                
                     </> ))}
-              </ul>
+              
 
         
            
@@ -79,7 +81,10 @@ function App() {
 
 export default App;
 
-
+/*AWS Amplify Location Service ReactJS Jquery React Hooks Pet Project exercise pt 1. 
+AWS DMS Profile - Covid19
+Learning ReactJS at AWS 
+Elliott Arnold Si3mshady 2-8-21 wip */
 
 //https://docs.amazonaws.cn/en_us/general/latest/gr/signing_aws_api_requests.html
 //https://www.codegrepper.com/code-examples/delphi/js+date+now+to+iso+string

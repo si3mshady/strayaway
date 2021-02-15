@@ -69,7 +69,7 @@
         "Timeout": "25",
         "Code": {
           "S3Bucket": "amplify-strayaway-dev-201841-deployment",
-          "S3Key": "amplify-builds/petprojecttracker-63384a30787245773870-build.zip"
+          "S3Key": "amplify-builds/petprojecttracker-78367533706a666c576b-build.zip"
         }
       }
     },

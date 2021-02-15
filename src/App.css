@@ -1,3 +1,8 @@
+
+* {
+  font-family: 'Permanent Marker', cursive;
+}
+
 .App {
   text-align: center;
 }
@@ -5,3 +10,14 @@
     width: 20%;
     height: 20%;
 }
+
+/* .col-1-of-2 {
+  width: calc((100% - 10px) / 2)
+}
+ */
+
+
+img{
+  width: 10%;
+}
+
